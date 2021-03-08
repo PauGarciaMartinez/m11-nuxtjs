@@ -1,0 +1,28 @@
+.pictures-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 10rem;
+}
+
+.back-btn {
+  height: auto;
+  border: 0px solid black;
+  border-radius: 0.2rem;
+  outline: none;
+  background-color: #2c3e508f;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.back-btn:hover {
+  cursor: pointer;
+  background-color: #2c3e50e1;
+}
+
+/*# sourceMappingURL=picture-details.css.map */

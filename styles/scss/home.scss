@@ -1,0 +1,48 @@
+// WRAPPER  
+.consulted-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto 5rem;
+  padding-bottom: 10rem;
+  gap: 3rem;
+}
+
+// CARDS
+.consulted-container {
+  display: block;
+  gap: 1rem;
+  background-color: #42b9832d;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 3px #2c3e503f;
+  padding: 1rem;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: left;
+  margin: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 3px #2c3e503f;
+}
+
+.data-container:hover {
+  transform: scale(1.05);
+  background-color: rgba(77, 200, 143, 0.459);
+}
+
+.name-container {
+  text-align: left;
+  width: 70%;
+  margin-left: 0.5rem;
+}
+
+// MEDIA QUERIES 
+@media only screen and (max-width: 850px) {
+  .consulted-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

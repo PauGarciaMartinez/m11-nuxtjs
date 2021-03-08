@@ -1,0 +1,37 @@
+.user-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  background-color: #42b9832d;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 3px #2c3e503f;
+  padding: 1rem;
+}
+
+.user-info {
+  text-align: left;
+}
+
+.back-btn {
+  height: auto;
+  border: 0px solid black;
+  border-radius: 0.2rem;
+  outline: none;
+  background-color: #2c3e508f;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.back-btn:hover {
+  cursor: pointer;
+  background-color: #2c3e50e1;
+}
+
+/*# sourceMappingURL=user-details.css.map */
