@@ -20,11 +20,10 @@
             placeholder="Search a user..."
             v-model="input"
             @focus="list = true">
-          <Autocomplete :inputSearch="input" @setInput="updateInput" :resultsList="list" />
-          <!-- @add-single-user="userUp" -->
+          <Autocomplete :inputSearch="input" :resultsList="list" />
         </div>
         <nuxt-link class="router-link" :to="{ name: 'Users', params: { inputSearch: input }}">
-          <button class="search-btn" @click="showUsers">Search</button>
+          <button class="search-btn">Search</button>
         </nuxt-link> 
       </div>
     </nav>

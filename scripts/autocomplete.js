@@ -19,10 +19,10 @@ export default {
   },
   methods: {
     setInput(username) {
-      this.$emit('set-input', username)
+      this.$nuxt.$emit('set-input', username)
     },
     addSingleUser(user) {
-      this.$emit('add-single-user', user)
+      this.$nuxt.$emit('add-single-user', user)
     }
   }
 }

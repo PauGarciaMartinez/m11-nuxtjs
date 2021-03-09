@@ -33,16 +33,22 @@ export default {
         albumClicked.clicks++
       }
       console.log(this.albumsConsulted)
-    })
-  },
-  methods: {
-    updateInput(username) {
+    }),
+    this.$nuxt.$on('set-input', (username) => {
       this.input = username
       this.list = false
-    },
-    showUsers() {
+    }),
+    this.$nuxt.$on('add-single-user', (user) => {
+      let consulted = this.usersConsulted.findIndex(item => item.name === user.name)
+      if (consulted === -1) {
+        user.clicks = 1
+        this.usersConsulted.push(user)
+      } else {
+        let userClicked = this.usersConsulted.find(item => item.name === user.name)
+        userClicked.clicks++
+      }
       console.log(this.usersConsulted)
-    }
+    })
   },
   components: { Autocomplete }
 }

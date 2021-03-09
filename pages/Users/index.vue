@@ -18,7 +18,6 @@
       <article class="user-container" v-for="user in matchingUsers" :key="user.id">
         <p class="user-name">{{ caps(user.name) }}</p>
         <nuxt-link :to="'Users/' + user.id" class="router-link">
-        <p>{{ user.id }}</p>
           <button class="user-btn" @click="addUserConsulted(user)">More info</button>
         </nuxt-link>
       </article>
