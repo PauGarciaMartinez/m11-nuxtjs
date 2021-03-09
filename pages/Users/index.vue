@@ -13,11 +13,12 @@
       <p>{{ error }}</p>
     </section>
 
-        <section class="users-wrapper" v-if="matchingUsers.length > 1">
+    <section class="users-wrapper" v-if="matchingUsers.length > 1">
       
       <article class="user-container" v-for="user in matchingUsers" :key="user.id">
         <p class="user-name">{{ caps(user.name) }}</p>
-        <nuxt-link :to="{ path: 'Users/' + user.id, params: { id: user.id }}" class="router-link">
+        <nuxt-link :to="'Users/' + user.id" class="router-link">
+        <p>{{ user.id }}</p>
           <button class="user-btn" @click="addUserConsulted(user)">More info</button>
         </nuxt-link>
       </article>

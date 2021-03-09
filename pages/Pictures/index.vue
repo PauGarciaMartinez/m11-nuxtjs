@@ -16,9 +16,9 @@
     <section class="albums-wrapper" v-if="albums">
       <article class="album-container" v-for="album in albums" :key="album.albumId">
         <p class="album-name">Album {{ album.albumId }}</p>
-        <router-link :to="{ name: 'PictureDetails', params: { id: album.albumId }}" class="router-link">
+        <nuxt-link :to="'Pictures/' + album.albumId" class="router-link">
           <button class="album-btn" @click="addAlbumConsulted(album)">See pictures</button>
-        </router-link>
+        </nuxt-link>
       </article>
     </section>
 
@@ -27,7 +27,7 @@
 </template>
 
 <!-- SCRIPT -->
-<script type="text/javascript" src="./../scripts/pictures.js"></script>
+<script type="text/javascript" src="./../../scripts/pictures.js"></script>
 
 <!-- STYLE -->
-<style src="./../styles/css/pictures.css"></style>
+<style src="./../../styles/css/pictures.css"></style>

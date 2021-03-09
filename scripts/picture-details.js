@@ -1,15 +1,22 @@
-import getAlbumDetails from './../composables/getAlbumDetails.js'
+import axios from 'axios'
 
 export default {
   name: 'Pictures',
   emits: ['addUserConsulted', 'addAlbumConsulted'],
-  props: ['id'],
-  setup(props) {
-    const { album, error, loadAlbum} = getAlbumDetails(props.id)
-
-    loadAlbum()
-
-    return { album, error }
+  data() {
+    return {
+      album: [],
+      error: null
+    }
+  },
+  async created() {
+    try {
+      const res = await axios.get('http://jsonplaceholder.typicode.com/photos/')
+      this.album = res.data
+      this.album = this.album.filter((album) => album.albumId == this.$route.params.id)
+    } catch (err) {
+      this.error = err
+    }
   },
   methods: {
     goBack() {

@@ -1,15 +1,21 @@
-import getUserDetails from './../composables/getUserDetails.js'
+import axios from 'axios'
 
 export default {
   name: 'UserDetails',
   emits: ['addUserConsulted', 'addAlbumConsulted'],
-  props: ['id'],
-  setup(props) {
-    const { user, error, loadUserDetails} = getUserDetails(props.id) 
-
-    loadUserDetails()
-    console.log(props.id)
-    return { user, error }
+  data() {
+    return {
+      user: null,
+      error: null
+    }
+  },
+  async created() {
+    try {
+      const res = await axios.get('http://jsonplaceholder.typicode.com/users/' + this.$route.params.id)
+      this.user = res.data
+    } catch (err) {
+      this.error = err
+    }
   },
   methods: {
     goBack() {

@@ -33,14 +33,20 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxt/http'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+
   },
 
   generate: {
     // choose to suit your project
     interval: 2000,
+  },
+
+  http: {
+    
   }
 }

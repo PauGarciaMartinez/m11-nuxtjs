@@ -9,7 +9,9 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxt/http": "^0.6.4",
     "@nuxtjs/composition-api": "^0.22.0",
+    "axios": "^0.21.1",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12"
   },
