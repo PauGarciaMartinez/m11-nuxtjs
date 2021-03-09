@@ -15,7 +15,7 @@ export default {
       this.$router.go(-1)
     },
     addAlbumConsulted(album) {
-      this.$emit('add-album-consulted', album)
+      this.$nuxt.$emit('add-album-consulted', album)
     }
   }
 }

@@ -4,7 +4,7 @@ export default {
   props: ['usersConsulted', 'albumsConsulted'],
   data() {
     return {
-      usersVisited: [],
+      usersVisited: this.usersConsulted,
       albumsVisited: []
     }
   },

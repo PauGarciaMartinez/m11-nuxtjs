@@ -28,7 +28,7 @@ export default {
       return name.toUpperCase()
     },
     addUserConsulted(user) {
-      this.$emit('add-user-consulted', user)
+      this.$nuxt.$emit('add-user-consulted', user)
     }
   }
 }
