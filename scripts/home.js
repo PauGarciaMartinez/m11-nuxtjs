@@ -1,7 +1,5 @@
 export default {
   name: 'Home',
-  emits: ['addUserConsulted', 'addAlbumConsulted'],
-  props: ['usersConsulted', 'albumsConsulted'],
   data() {
     return {
       usersVisited: [],
@@ -9,12 +7,12 @@ export default {
     }
   },
   mounted() {
-    if (this.usersConsulted) {
-      this.usersVisited = JSON.parse(this.usersConsulted)
+    if (this.$route.query.usersConsulted) {
+      this.usersVisited = this.$route.query.usersConsulted
     }
 
-    if (this.albumsConsulted) {
-      this.albumsVisited = JSON.parse(this.albumsConsulted)
+    if (this.$route.query.albumsConsulted) {
+      this.albumsVisited = this.$route.query.albumsConsulted
     }
   }
 }

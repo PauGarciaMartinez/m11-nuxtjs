@@ -2,7 +2,6 @@ import getAlbums from './../composables/getAlbums.js'
 
 export default {
   name: 'Pictures', 
-  emits: ['addUserConsulted', 'addAlbumConsulted'],
   setup() {
     const { albums, error, loadAlbums} = getAlbums()
 

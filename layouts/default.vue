@@ -7,7 +7,7 @@
         <img class="logo" alt="Vue logo" src="./../assets/logo.png">
       </div>
       <div class="menu-container">
-        <nuxt-link :to="{ name: 'index', params: { usersConsulted: JSON.stringify(usersConsulted), albumsConsulted: JSON.stringify(albumsConsulted) }}">Home</nuxt-link>
+        <nuxt-link :to="{ name: 'index', query: { usersConsulted: usersConsulted, albumsConsulted: albumsConsulted }}">Home</nuxt-link>
         <nuxt-link :to="{ name: 'Users' }">Users</nuxt-link> 
         <nuxt-link :to="{ name: 'Pictures' }">Pictures</nuxt-link> 
       </div>
@@ -21,7 +21,6 @@
             v-model="input"
             @focus="list = true">
           <Autocomplete :inputSearch="input" :resultsList="list" />
-          <!-- @add-single-user="userUp" -->
         </div>
         <nuxt-link class="router-link" :to="{ name: 'Users', query: { inputSearch: input }}">
           <button class="search-btn">Search</button>

@@ -2,7 +2,6 @@ import axios from 'axios'
 
 export default {
   name: 'Pictures',
-  emits: ['addUserConsulted', 'addAlbumConsulted'],
   data() {
     return {
       album: [],

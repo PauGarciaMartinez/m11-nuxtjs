@@ -2,7 +2,6 @@ import Autocomplete from './../components/Autocomplete.vue'
 
 export default {
   name: 'App',
-  emits: ['setInput'],
   data() {
     return {
       input: "",

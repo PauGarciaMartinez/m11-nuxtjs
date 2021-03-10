@@ -2,7 +2,6 @@ import axios from 'axios'
 
 export default {
   name: 'UserDetails',
-  emits: ['addUserConsulted', 'addAlbumConsulted'],
   data() {
     return {
       user: null,

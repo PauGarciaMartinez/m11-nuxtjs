@@ -2,7 +2,6 @@ import axios from 'axios'
 
 export default {
   name: 'Users', 
-  emits: ['addUserConsulted', 'addAlbumConsulted'],
   data() {
     return {
       users: [],
@@ -16,7 +15,6 @@ export default {
       const res = await axios.get('http://jsonplaceholder.typicode.com/users/')
       this.users = res.data
       this.empty = true
-      console.log(this.$route.query.inputSearch)
     } catch (err) {
       this.error = err
     }
@@ -38,7 +36,7 @@ export default {
       return name.toUpperCase()
     },
     addUserConsulted(user) {
-      this.$emit('add-user-consulted', user)
+      this.$nuxt.$emit('add-user-consulted', user)
     }
   }
 }
