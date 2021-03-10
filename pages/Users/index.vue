@@ -13,20 +13,20 @@
       <p>{{ error }}</p>
     </section>
 
-    <section class="users-wrapper" v-if="matchingUsers.length > 1">
+    <section class="users-wrapper" v-if="filteredUsers.length > 1">
       
-      <article class="user-container" v-for="user in matchingUsers" :key="user.id">
+      <article class="user-container" v-for="user in filteredUsers" :key="user.id">
         <p class="user-name">{{ caps(user.name) }}</p>
-        <nuxt-link :to="'Users/' + user.id" class="router-link">
+        <nuxt-link :to="{ path: 'Users/' + user.id, params: { id: user.id }}" class="router-link">
           <button class="user-btn" @click="addUserConsulted(user)">More info</button>
         </nuxt-link>
       </article>
     
     </section>
 
-    <section v-if="matchingUsers.length === 1">
+    <section v-if="filteredUsers.length === 1">
       
-      <article class="user-card" v-for="user in matchingUsers" :key="user.id">
+      <article class="user-card" v-for="user in filteredUsers" :key="user.id">
         <h3 class="user-title">{{ caps(user.name) }}</h3>
         <div class="user-info">
           <p><strong>Email:</strong> {{ user.email }}</p>
@@ -41,7 +41,7 @@
     
     </section>
     
-    <section class="users-wrapper" v-if="!matchingUsers.length && empty">
+    <section class="users-wrapper" v-if="!filteredUsers.length && empty">
 
       <transition name="empty">
         <article class="empty-container">

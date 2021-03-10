@@ -11,7 +11,6 @@
 
       <article class="consulted-container">
         <h3>Users consulted</h3>
-        <p>{{ usersConsulted }}</p>
         <div class="data-container" v-for="user in usersVisited" :key="user">
           <div class="name-container">
             <p>{{ user.name }}</p>

@@ -70,10 +70,16 @@ div {
   color: #2c3e50;
 }
 
+.user-card {
+  line-height: 2rem;
+  color: #2c3e50;
+}
+
 .search-container {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  align-items: center;
 }
 
 .search-bar {

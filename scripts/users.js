@@ -1,24 +1,34 @@
-import { computed } from '@nuxtjs/composition-api'
-import getUsers from './../composables/getUsers.js'
+import axios from 'axios'
 
 export default {
   name: 'Users', 
-  props: ['inputSearch'],
   emits: ['addUserConsulted', 'addAlbumConsulted'],
-  setup(props) {
-    const { users, error, empty, loadUsers} = getUsers()
-
-    loadUsers()
-    
-    const matchingUsers = computed(() => {
-      if (props.inputSearch) {
-        return users.value.filter(user => user.name.toLowerCase().includes(props.inputSearch.toLowerCase()))
+  data() {
+    return {
+      users: [],
+      error: null,
+      empty: false
+    }
+  },
+  async created() {
+    try {
+      this.empty = false
+      const res = await axios.get('http://jsonplaceholder.typicode.com/users/')
+      this.users = res.data
+      this.empty = true
+      console.log(this.$route.query.inputSearch)
+    } catch (err) {
+      this.error = err
+    }
+  },
+  computed: {
+    filteredUsers() {
+      if (this.$route.query.inputSearch) {
+        return this.users.filter(user => user.name.toLowerCase().includes(this.$route.query.inputSearch.toLowerCase()))
       } else {
-        return users.value
+        return this.users
       }
-    })
-    
-    return { users, error, empty, matchingUsers }
+    }
   },
   methods: {
     goBack() {
@@ -28,7 +38,7 @@ export default {
       return name.toUpperCase()
     },
     addUserConsulted(user) {
-      this.$nuxt.$emit('add-user-consulted', user)
+      this.$emit('add-user-consulted', user)
     }
   }
 }
