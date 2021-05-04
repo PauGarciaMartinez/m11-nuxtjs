@@ -54,5 +54,9 @@ export default {
 
   http: {
     
+  },
+  target: 'static',
+  router: {
+    base: '/m11-nuxtjs/'
   }
 }
