@@ -10,7 +10,7 @@ export default {
   },
   async created() {
     try {
-      const res = await axios.get('http://jsonplaceholder.typicode.com/photos/')
+      const res = await axios.get('https://jsonplaceholder.typicode.com/photos/')
       this.album = res.data
       this.album = this.album.filter((album) => album.albumId == this.$route.params.id)
     } catch (err) {

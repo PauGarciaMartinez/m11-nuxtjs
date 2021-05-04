@@ -10,7 +10,7 @@ export default {
   },
   async created() {
     try {
-      const res = await axios.get('http://jsonplaceholder.typicode.com/users/' + this.$route.params.id)
+      const res = await axios.get('https://jsonplaceholder.typicode.com/users/' + this.$route.params.id)
       this.user = res.data
     } catch (err) {
       this.error = err

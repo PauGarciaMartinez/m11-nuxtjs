@@ -6,7 +6,7 @@ const getAlbums = () => {
 
   const loadAlbums = async () => {
     try {
-      let albumsData = await fetch('http://jsonplaceholder.typicode.com/photos')
+      let albumsData = await fetch('https://jsonplaceholder.typicode.com/photos')
       if (!albumsData) {
         throw Error('No album data available')
       }

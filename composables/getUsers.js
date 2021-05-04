@@ -8,7 +8,7 @@ const getUsers = () => {
   const loadUsers = async () => {
     try {
       empty.value = false
-      let usersData = await fetch('http://jsonplaceholder.typicode.com/users')
+      let usersData = await fetch('https://jsonplaceholder.typicode.com/users')
       if (!usersData) {
         throw Error('No users data available')
       }

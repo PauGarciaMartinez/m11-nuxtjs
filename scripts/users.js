@@ -12,7 +12,7 @@ export default {
   async created() {
     try {
       this.empty = false
-      const res = await axios.get('http://jsonplaceholder.typicode.com/users/')
+      const res = await axios.get('https://jsonplaceholder.typicode.com/users/')
       this.users = res.data
       this.empty = true
     } catch (err) {
